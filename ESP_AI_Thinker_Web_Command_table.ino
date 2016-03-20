@@ -3,7 +3,6 @@
 //////////////////////
 // WiFi Definitions //
 //////////////////////
-//const char WiFiAPPSK[] = "sparkfun";
 
 //RED leds on AI_THINKER board
 int gpios[9] = {2,0,4,5,14,16,15,12,13};
@@ -47,6 +46,7 @@ void loop()
   if (req.indexOf("/gpio14/1")  != -1){ digitalWrite(14, 1);  stat[4]="HIGH";} 
   if (req.indexOf("/gpio16/0")  != -1){ digitalWrite(16, 0);  stat[5]="LOW";}  
   if (req.indexOf("/gpio16/1")  != -1){ digitalWrite(16, 1);  stat[5]="HIGH";} 
+ 
   if (req.indexOf("/red/0")     != -1){ digitalWrite(15, 0);  stat[6]="LOW";}  
   if (req.indexOf("/red/1")     != -1){ digitalWrite(15, 1);  stat[6]="HIGH";} 
   if (req.indexOf("/green/0")   != -1){ digitalWrite(12, 0);  stat[7]="LOW";}  
