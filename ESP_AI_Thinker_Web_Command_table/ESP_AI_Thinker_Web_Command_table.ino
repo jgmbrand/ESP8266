@@ -66,8 +66,8 @@ void loop()
 }
 //**********************************************************
 void setupWiFi_STA(){
-  const char* ssid     = "linksysE2000";
-  const char* password = "0595913318";
+  const char* ssid     = "SSID";
+  const char* password = "PASS";
 
   Serial.println();
   Serial.println();
