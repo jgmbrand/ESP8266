@@ -1,40 +1,34 @@
+#include "credentials.h"
 #include <ESP8266WiFi.h>
 
-//////////////////////
-// WiFi Definitions //
-//////////////////////
-//const char WiFiAPPSK[] = "sparkfun";
-
-//RED leds on AI_THINKER board
+//ALL GPIO pins to leds on AI_THINKER board
 int gpios[9] = {2,0,4,5,14,16,15,12,13};
 
+//Actual status of the GPIO pins(init with defaults
 String stat[9] = {"HIGH","HIGH","HIGH","HIGH","HIGH","HIGH","LOW","LOW","LOW"};
 
 WiFiServer server(80);
 
-void setup() 
-{
+void setup(){
   initHardware();
   setupWiFi_STA();
-  //setupWiFi_AP();
   server.begin();
 }
 
-//int val;
-//String On_Off;
-
-void loop() 
-{
+//**********************************************************
+// Main loop handles browser requests and updates page
+//**********************************************************
+void loop(){
   // Check if a client has connected
   WiFiClient client = server.available();
+  // No client? Just do nothing
   if (!client) return;
   
   // Read the first line of the request
   String req = client.readStringUntil('\r');
-  Serial.println(req);
+  Serial.print("Request : ");Serial.println(req);
   client.flush();
-
-  //Serial.println(req.indexOf("/gpio2/0"));
+  // Maybe change makepage to create simpler requests
   if (req.indexOf("/gpio2/0")   != -1){ digitalWrite(2, 0);   stat[0]="LOW";}  
   if (req.indexOf("/gpio2/1")   != -1){ digitalWrite(2, 1);   stat[0]="HIGH";} 
   if (req.indexOf("/gpio0/0")   != -1){ digitalWrite(0, 0);   stat[1]="LOW";}  
@@ -64,16 +58,21 @@ void loop()
   // The client will actually be disconnected 
   // when the function returns and 'client' object is detroyed
 }
+
+//**********************************************************
+// Init a WIFI station
 //**********************************************************
 void setupWiFi_STA(){
-  const char* ssid     = "SSID";
-  const char* password = "PASS";
+  
+  const char* ssid      = YOUR_SSID; //define this in credentials.h
+  const char* password  = YOUR_PASS; //define this in credentials.h
 
   Serial.println();
   Serial.println();
   Serial.print("Connecting to ");
   Serial.println(ssid);
   
+  WiFi.mode(WIFI_STA);
   WiFi.begin(ssid, password);
   
   while (WiFi.status() != WL_CONNECTED) {
@@ -88,35 +87,10 @@ void setupWiFi_STA(){
 }
 
 //*****************************************************
-void setupWiFi_AP()
-{
-  const char WiFiAPPSK[] = "sparkfun";
-  WiFi.mode(WIFI_AP);
-
-  // Do a little work to get a unique-ish name. Append the
-  // last two bytes of the MAC (HEX'd) to "Thing-":
-  uint8_t mac[WL_MAC_ADDR_LENGTH];
-  WiFi.softAPmacAddress(mac);
-  String macID = String(mac[WL_MAC_ADDR_LENGTH - 2], HEX) +
-                 String(mac[WL_MAC_ADDR_LENGTH - 1], HEX);
-  macID.toUpperCase();
-  String AP_NameString = "ESP8266_" + macID;
-
-  char AP_NameChar[AP_NameString.length() + 1];
-  memset(AP_NameChar, 0, AP_NameString.length() + 1);
-
-  for (int i=0; i<AP_NameString.length(); i++)
-    AP_NameChar[i] = AP_NameString.charAt(i);
-
-  WiFi.softAP(AP_NameChar, WiFiAPPSK,3);
-  Serial.print("AP IP address: ");
-  IPAddress myIP = WiFi.softAPIP();
-  Serial.println(myIP);
-}
-
+// Init Serial and GPIO's
+// Shows some sketch info
 //*****************************************************
-void initHardware()
-{
+void initHardware(){
   delay(1000);
   Serial.begin(115200);
   Serial.println();Serial.println();
@@ -131,6 +105,9 @@ void initHardware()
   }
 }
 
+//*****************************************************
+//returns the HTML webpage-Content
+//*****************************************************
 String makepage(void){
     // Prepare the response. Start with the common header:
     String s = "HTTP/1.1 200 OK Content-Type: text/html\r\n\r\n"\
@@ -221,28 +198,4 @@ String makepage(void){
 
     return (s);
 }
-
-//if (val >= 0)
-  //{
-  //  s += "LED is now ";
-  //  s += (val)?"off":"on";
-  //}
-  //else if (val == -2)
-  //{ // If we're reading pins, print out those values:
-  //  s += "Analog Pin = ";
-  //  s += String(analogRead(ANALOG_PIN));
-  //  s += "<br>"; // Go to the next line.
-  //  s += "Digital Pin 12 = ";
-  //  s += String(digitalRead(DIGITAL_PIN));
-  //}
-  //else
-  //{
-  //  s += "Invalid Request.<br> Try /led/1, /led/0, or /read.";
-  //}
-  //  s += "<p id=\"demo\"></p>";
-  //  s += "<script>";
-  //  s += "document.getElementById(\"demo\").innerHTML ="; 
-  //  s += "\"Page location is: \" + window.location.href";
-  //  s += "</script>";
- 
   
