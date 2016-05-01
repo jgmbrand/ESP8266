@@ -82,8 +82,10 @@ void setupWiFi_STA(){
 
   Serial.println("");
   Serial.println("WiFi connected");  
-  Serial.print("IP address: ");
-  Serial.println(WiFi.localIP());
+  Serial.print("Type IP address: ");
+  Serial.print(WiFi.localIP());
+  Serial.println(" in browser URL field.";
+  
 }
 
 //*****************************************************
