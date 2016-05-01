@@ -14,3 +14,5 @@
 >	  Sensor publications  
 >	  Dashboard examples in "Doc" folder  
 >	  Example on how to send your location data  
+
+![AI Thinker Board](https://github.com/jgmbrand/ESP8266/blob/master/ESP_mqtt_Adafruit_io/Doc/Adafruit_MQTT_Dashboard.jpg)
