@@ -1,14 +1,10 @@
-# ESP8266 
+# ESP8266  
+###ESP8266 Arduino_IDE code  
+###A collection of simple tryouts and/or examples   
 
-ESP8266 tryouts and examples
-
-A collection of simple tryouts and/or examples
-
-  ESP_AI_Thinker_Web_Command_table
-  
-	  A simple webserver for the AI-Thinker development board
-
-	  Use a webbrowser to control all onboard LEDS  
+##ESP_AI_Thinker_Web_Command_table  
+>	  A simple webserver for the AI-Thinker development board  
+>	  Use a webbrowser to control all onboard LEDS  
 
 
   ESP_mqtt_Adafruit_io
