@@ -7,8 +7,7 @@
 
 ![AI Thinker Board](https://github.com/jgmbrand/ESP8266/blob/master/ESP_AI_Thinker_Web_Command_table/Doc/AI_Thinker_Development_board.jpg)  
 
-####ESP_mqtt_Adafruit_io
-
+####ESP_mqtt_Adafruit_io  
 >   MQTT tryout with io.adafruit.com dashboards  
 >	  GPIO subscriptions  
 >	  Sensor publications  
@@ -16,6 +15,3 @@
 >	  Example on how to send your location data  
 
 ![AI Thinker Board](https://github.com/jgmbrand/ESP8266/blob/master/ESP_mqtt_Adafruit_io/Doc/Adafruit_MQTT_Dashboard.jpg)
-
-![AI Thinker Board](https://i.ytimg.com/vi/rk9VVXMwgys/hqdefault.jpg)
-[![AI Thinker Board](https://www.youtube.com/watch?v=sPfJ9f1FuUE)](https://youtu.be/rk9VVXMwgys)
