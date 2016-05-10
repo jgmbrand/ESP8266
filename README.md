@@ -22,6 +22,8 @@
 
 >   Websocket server sending binary data  
 >   "canvasTrace.html" is in "Doc" folder (use correct IP address : see serial monitor)  
->   Audio source is a $1.50 mp3 player from Aliexpress  
+>   Audio is sampled by the ADC input and send to the websocket client "canvasTrace.html"
+>   There is some very simple code to provide some trigger level
+>   Audio source is a $1.50 mp3 player from Aliexpress(link below)  
 >   http://www.aliexpress.com/item/1pcs-TF-card-U-disk-MP3-Format-decoder-board-module-amplifier-decoding-audio-Player/32622813538.html  
->   The input-ranges are send to the server to change some settings     
+>   The input-ranges are send from the client to the server to change some settings     
