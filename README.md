@@ -26,7 +26,8 @@
 >   There is some very simple code to provide some trigger level  
 >   Audio source is a $1.50 mp3 player from Aliexpress(link below)   
 >   http://www.aliexpress.com/item/1pcs-TF-card-U-disk-MP3-Format-decoder-board-module-amplifier-decoding-audio-Player/32622813538.html  
->   The ESP I used is a nudemcu 1.0 dev.board 
+>   Theres is a simple diagram to create a 500mV offset of the trace
+>   The ESP8266 used is a nudemcu 1.0 dev.board 
 >   The input-ranges are send from the WS-client to the WS-server to provide some trace settings     
 >   See screenshot of a canvas , displaying a musical cord.  
 ![](https://github.com/jgmbrand/ESP8266/blob/master/ESP_WS_binary_data/Doc/Cord.jpg)
