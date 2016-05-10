@@ -18,4 +18,9 @@
 ![AI Thinker Board](https://github.com/jgmbrand/ESP8266/blob/master/ESP_mqtt_Adafruit_io/Doc/Adafruit_MQTT_Dashboard.jpg)
 
 
-####ESP_WS_binarydata
+####ESP_WS_binary_data
+
+>   Websocket server sending binary data
+>   "Canvastrace.html is in "Doc" folder (use correct IP address : see serial monitor)
+>   Audio source is a $1.50 mp3 player from Aliexpress
+>   The <input 
