@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<body bgcolor="#E6E6FA">
+
+ <h2 id="h2">Canvas trace display<h2>
+ <canvas id="myCanvas" width="512px" height="256px" style="border:3px solid"></canvas>
+ <br><h3>Time between samples :&nbsp<span id ="sp_s">50</span>&nbspSec.<h3>
+ <input id="s" style="Width:512px;backcolor:'black';" type="range" min="10" max="200" step="5" value="50" onchange="send(id);" /><br/>
+ <br><h3>First sample voltage :&nbsp<span id ="sp_t">500</span>&nbspmVolt<h3>
+ <input id="t" style="Width:512px" type="range" min="20" max="1000" step="10" value="500" onchange="send(id);" /><br/>
+
+
+
+ <script>
+	 var c = document.getElementById("myCanvas");
+	 var ctx = c.getContext("2d");
+	 var connection = new WebSocket('ws://192.168.1.26:81/', ['arduino']);
+	 connection.binaryType = "arraybuffer";
+	 connection.onopen = function () {connection.send('Connect: ' + new Date());};
+	 connection.onerror = function (error) {console.log('WebSocket Error: ', error);};
+	 connection.onmessage = function (e) {
+	 	var i = 0;
+	 	var bytearray = new Uint8Array(e.data);
+	 	//console.log(bytearray.length);
+	 	ctx.fillStyle = "#A1D090";
+		ctx.fillRect(0,0,c.width,c.height);
+
+	 	//ctx.beginPath();
+		//ctx.moveTo(0,c.height/4);
+		//ctx.lineTo(c.width,c.height/4)
+		//ctx.moveTo(0,c.height/2);
+		//ctx.lineTo(c.width,c.height/2)
+		//ctx.moveTo(0,c.height-c.height/4);
+		//ctx.lineTo(c.width,c.height-c.height/4)
+		//ctx.strokeStyle = "yellow";
+		//ctx.stroke();
+
+	 	ctx.beginPath();
+	 	ctx.moveTo(0,bytearray[i++]);
+	 	for (var x=1;x<c.width;x+=1) ctx.lineTo(x,bytearray[i++]);
+	 	ctx.lineTo(x,bytearray[i]);
+		ctx.strokeStyle = "white";
+		ctx.stroke();
+	 };
+
+	function send(id) {
+		var value   = document.getElementById(id).value;
+		connection.send(id + value);
+		document.getElementById('sp_'+id).innerHTML = value;
+		console.log(id + value);
+ 	}
+
+</script>
+
+</body>
+</html>
