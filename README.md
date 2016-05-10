@@ -21,6 +21,7 @@
 ####ESP_WS_binary_data
 
 >   Websocket server sending binary data  
->   "Canvastrace.html is in "Doc" folder (use correct IP address : see serial monitor)  
+>   "canvasTrace.html" is in "Doc" folder (use correct IP address : see serial monitor)  
 >   Audio source is a $1.50 mp3 player from Aliexpress  
+>   http://www.aliexpress.com/item/1pcs-TF-card-U-disk-MP3-Format-decoder-board-module-amplifier-decoding-audio-Player/32622813538.html  
 >   The <input   
