@@ -31,3 +31,13 @@
 >   The WS-client has 2 input-ranges who's values are send to the WS-server to provide some trace settings       
 >   See screenshot of a canvas , displaying a musical cord. (Chrome)   
 ![](https://github.com/jgmbrand/ESP8266/blob/master/ESP_WS_binary_data/Doc/Cord.jpg)
+
+####ESP_twoStroke
+
+>   SSD1306 Oled display tryouts.
+>   Animated simulation of a twostroke engine.
+>   Mainly to exercise pixels, lines, circles, text  etc.
+>   i2c and ssd1306 code is mainly based on (ripped from) existing libraries.
+>   Because of the 400kHz i2c clock speed an extra pullup might be required.(e.g. 2k2 ohm)
+![](https://github.com/jgmbrand/ESP8266/blob/master/ESP_twoStroke/Doc/screen.jpg)
+
