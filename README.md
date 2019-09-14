@@ -37,7 +37,7 @@
 >   SSD1306 Oled display tryouts.  
 >   Animated simulation of a twostroke engine.  
 >   Mainly to exercise pixels, lines, circles, text  etc.  
->   i2c and ssd1306 code is mainly based on (ripped from) existing libraries.  
+>   i2c and ssd1306 code is partly based on (ripped from) existing libraries.  
 >   Because of the 400kHz i2c clock speed an extra pullup might be required.(e.g. 2k2 ohm)  
 ![](https://github.com/jgmbrand/ESP8266/blob/master/ESP_twoStroke/Doc/screen.jpg)
 
