@@ -6,7 +6,7 @@
 ![AI Thinker Board](https://github.com/jgmbrand/ESP8266/blob/master/ESP_AI_Thinker_Web_Command_table/Doc/WebPage.jpg)  
 >   Use a webbrowser to control all onboard LEDS  
 
-![AI Thinker Board](https://github.com/jgmbrand/ESP8266/blob/master/ESP_AI_Thinker_Web_Command_table/Doc/WebPage.jpg)  
+![AI Thinker Board](https://github.com/jgmbrand/ESP8266/blob/master/ESP_AI_Thinker_Web_Command_table/Doc/AI_Thinker_Development_board.jpg)  
 
 ####ESP_mqtt_Adafruit_io
 
